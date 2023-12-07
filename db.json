@@ -1,10 +1,16 @@
 {
   "notes": [
     {
-      "id": 1,
-      "title": "Sample note",
-      "body": "This is the body of my note",
-      "updatedAt": "2018-01-01T00:00:00.000Z"
+      "title": "Hi",
+      "body": "Hello",
+      "updatedAt": "2023-12-07T20:41:47.041Z",
+      "id": 1
+    },
+    {
+      "title": "h",
+      "body": "j",
+      "updatedAt": "2023-12-07T22:32:41.871Z",
+      "id": 2
     }
   ]
 }
