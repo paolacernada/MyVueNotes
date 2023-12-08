@@ -1,16 +1,16 @@
 {
   "notes": [
     {
-      "title": "Hi",
-      "body": "Hello",
-      "updatedAt": "2023-12-07T20:41:47.041Z",
-      "id": 1
+      "title": "Buy",
+      "body": "Bananas\nBread\nCoffee",
+      "id": 1,
+      "updatedAt": "2023-12-08T00:21:20.349Z"
     },
     {
-      "title": "h",
-      "body": "j",
-      "updatedAt": "2023-12-07T22:32:41.871Z",
-      "id": 2
+      "title": "Call Doctor",
+      "body": "Make Appt.",
+      "id": 3,
+      "updatedAt": "2023-12-08T00:31:56.908Z"
     }
   ]
 }

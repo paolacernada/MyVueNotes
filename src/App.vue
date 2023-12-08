@@ -1,153 +1,67 @@
 <template>
-
-  <div id="noteCardContainer" class="noteCard">
-    <div class="windowTitleBar">
-      <span class="windowTitle">Note App</span>
-      <div class="windowControls"></div>
-    </div>
-    <div class="noteContent">
-      <form @submit.prevent="createNote">
-        <input
-          type="text"
-          v-model="newNote.title"
-          placeholder="Title"
-          required
-        />
-        <textarea
-          v-model="newNote.body"
-          placeholder="Note body"
-          required
-        ></textarea>
-        <button type="submit">Create Note</button>
-      </form>
-
-      <h1 class="noteHeader">Vue Notes</h1>
-
-      <div id="container">
-        <NoteCard
-          v-for="note in notes"
-          :key="note.id"
-          :note="note"
-          @edit-note="displayEditForm"
-          @delete-note="deleteNote"
-        />
-      </div>
-    </div>
+  <div id="app" class="container">
+    <AppHeader />
+    <NoteList />
   </div>
 </template>
 
 <script>
-import NoteCard from "./components/NoteCard.vue";
-import { ref } from "vue";
+import AppHeader from './components/Header.vue';
+import NoteList from './components/NoteList.vue'
 
 export default {
   components: {
-    NoteCard,
-  },
-  setup() {
-    const notes = ref([]);
-    const newNote = ref({ title: "", body: "" });
-    const url = "http://localhost:3000/notes/";
-
-    const fetchNotes = async () => {
-      const response = await fetch(url);
-      notes.value = await response.json();
-    };
-
-    const createNote = async () => {
-      await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...newNote.value,
-          updatedAt: new Date().toISOString(),
-        }),
-      });
-      newNote.value = { title: "", body: "" };
-      fetchNotes();
-    };
-
-    const deleteNote = async (noteId) => {
-      await fetch(url + noteId, { method: "DELETE" });
-      fetchNotes();
-    };
-
-    fetchNotes();
-
-    return { notes, newNote, createNote, deleteNote };
+    AppHeader,
+    NoteList, 
   },
 };
 </script>
 
-<style scoped>
-.noteContent,
-#noteCardContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 20px;
-}
+<style>
 
-form {
-  background: #FFFFFF;
-  padding: 20px;
-  border: 2px solid #B0C4DE;
-  border-radius: 8px;
-  box-shadow:
-    inset 0 0 10px #e6e1e8, /* Inner shadow for a pressed effect */
-    0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow for depth */
-  margin-bottom: 20px;
-  width: 50%; 
-  margin-left: auto; 
-  margin-right: auto; 
-}
-
-input[type="text"],
-textarea {
-  font-family: "Press Start 2P", monospace;
-  color: #4a6572;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #e6e1e8; 
-  border: 1px solid #B0C4DE;
-  border-radius: 4px; 
-  box-sizing: border-box;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 5px #637a91; /* Subtle focus glow */
-}
-
-textarea {
-  resize: vertical;
-  height: 100px;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #f5f5f5; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
 }
 
 button {
-  font-family: "Press Start 2P", monospace;
-  background-color: #FFD54F; /* Muted button color */
-  color: #4a6572;
+  background-color: #3498db;
   border: none;
-  padding: 5px 10px;
-  margin: 3px;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
   text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
-  border-radius: 4px; 
-  box-shadow:
-    0 2px #B0C4DE, /* Bottom border for 3D effect */
-    0 4px 6px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
 }
 
 button:hover {
-  background-color: #FFCA28; /* Slightly darker yellow on hover */
+  background-color: #2980b9;
 }
 
-#container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 20px;
+input, textarea {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+}
 </style>
+

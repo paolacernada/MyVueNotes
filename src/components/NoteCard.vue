@@ -37,14 +37,13 @@ export default {
 
 <style scoped>
 .noteCard {
-  background: #eceff1; /* Light grey-blue for cards */
+  background: #eceff1; 
   font-family: "Roboto Mono", monospace;
-  border: 2px solid #dfe3e7; /* Classic Windows border color */
+  border: 2px solid #dfe3e7;
   padding: 15px;
-  border-radius: 8px; /* Slightly rounded edges for a softer look */
+  border-radius: 8px; 
   box-shadow:
-    inset 0 0 10px #e6e1e8,
-    /* Inner shadow for a pressed effect */ 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow for depth */
+    inset 0 0 10px #e6e1e8, 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
