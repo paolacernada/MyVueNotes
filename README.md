@@ -1,7 +1,7 @@
-# MyVueNotes: Vue.js Note-Taking App
+# VueMyNotes: Vue.js Note-Taking App
 
 ## Introduction
-MyVueNotes is a dynamic, single-page note-taking app built with Vue.js. This project showcases my skills in front-end development and my ability to create user-friendly web applications.
+VueMyNotes is a dynamic, single-page note-taking app built with Vue.js. This project showcases my skills in front-end development and my ability to create user-friendly web applications.
 
 ## Setup
 Clone the repository and install dependencies:
@@ -35,5 +35,5 @@ fetch('http://localhost:3000/notes/', {
 .then(data => console.log(data))
 ```
 
-## Why MyVueNotes?
-MyVueNotes reflects my Vue.js capabilities and my passion for creating engaging web applications. It's designed to be a practical tool for users and a showcase of my coding journey.
+## Why VueMyNotes?
+VueMyNotes reflects my Vue.js capabilities and my passion for creating engaging web applications. It's designed to be a practical tool for users and a showcase of my coding journey.
