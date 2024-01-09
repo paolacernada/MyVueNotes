@@ -6,7 +6,7 @@ VueMyNotes is a dynamic, single-page note-taking app built with Vue.js. This pro
 ## Setup
 Clone the repository and install dependencies:
 ```bash
-git clone https://github.com/paolacernada/MyVueNotes.git
+git clone https://github.com/paolacernada/VueMyNotes.git
 cd MyVueNotes
 npm install
 ```
